@@ -1,0 +1,20 @@
+{
+  "name": "coloradocare",
+  "version": "1.0.0",
+  "description": "bots for colorado care",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "colorado",
+    "care",
+    "slack"
+  ],
+  "author": "Lee Blazek <info@berzerk.co.nz> (http://berzerk.co.nz/)",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/client": "^3.5.1"
+  }
+}
