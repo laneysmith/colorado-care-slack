@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 
 app.post('/commands/motivate', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
-  res.send('Lets do this!' + req);
+  res.send('Lets do this!' + req.body);
 });
 
 
