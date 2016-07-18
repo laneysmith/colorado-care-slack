@@ -6,14 +6,22 @@ var RTM_CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS.RTM;
 
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 let port = process.env.PORT || 3000;
+
+
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
-app.post('/commands/motivate', function (req, res) {
-  console.log(req.body);
-  res.send('Lets do this!' + req.body.user_name );
+
+
+app.post('/commands/motivate', urlencodedParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400)
+  res.send('Lets do this!' + req);
 });
 
 
