@@ -1,15 +1,16 @@
-var token = process.env.SLACK_API_TOKEN || '';
-var RtmClient = require('@slack/client').RtmClient;
-var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
-var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
-var RTM_CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS.RTM;
+const config = require('./config');
+const token = process.env.SLACK_API_TOKEN || config('SLACK_API_TOKEN') || '';
+const RtmClient = require('@slack/client').RtmClient;
+const CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
+const RTM_EVENTS = require('@slack/client').RTM_EVENTS;
+const RTM_CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS.RTM;
 
 
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+let app = express();
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 let port = process.env.PORT || 3000;
 
@@ -26,9 +27,9 @@ app.post('/commands/motivate', urlencodedParser, function (req, res) {
 
 
 // The memory data store is a collection of useful functions we can include in our RtmClient
-var MemoryDataStore = require('@slack/client').MemoryDataStore;
-// var rtm = new RtmClient(token, {logLevel: 'debug'});
-var rtm = new RtmClient(token, {logLevel: 'error',
+let MemoryDataStore = require('@slack/client').MemoryDataStore;
+// let rtm = new RtmClient(token, {logLevel: 'debug'});
+let rtm = new RtmClient(token, {logLevel: 'error',
 // Initialise a data store for our client, this will load additional helper functions for the storing and retrieval of data
  dataStore: new MemoryDataStore()
 });
@@ -51,9 +52,9 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
   //   ts: '1468385402.000013',
   //   team: 'T1R6ELRHV' }
   console.log(message.text, message.user);
-  var user = rtm.dataStore.getUserById(message.user)
+  let user = rtm.dataStore.getUserById(message.user)
 
-   var dm = rtm.dataStore.getDMByName(user.name);
+  let dm = rtm.dataStore.getDMByName(user.name);
 
    rtm.sendMessage('Hello ' + user.name + '!', dm.id);
   // rtm.sendMessage('Hey you', 'C1R69C2G0', function messageSent() {
@@ -68,5 +69,6 @@ rtm.start();
 console.log('started test rtm');
 
 app.listen(port, function () {
-  console.log('app listening on port ' + port + '!');
+  console.log('app listening on port ' + port + '!,');
+  console.log('env ' + process.env.NODE_ENV);
 });
