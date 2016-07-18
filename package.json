@@ -1,11 +1,11 @@
 {
   "name": "coloradocare",
   "version": "1.0.0",
-  "description": "bots for colorado care",
+  "description": "bots for colorado care and api",
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "node index.js"
+    "start": "NODE_ENV=development nodemon index.js"
   },
   "keywords": [
     "colorado",
@@ -15,6 +15,12 @@
   "author": "Lee Blazek <info@berzerk.co.nz> (http://berzerk.co.nz/)",
   "license": "ISC",
   "dependencies": {
-    "@slack/client": "^3.5.1"
+    "@slack/client": "^3.5.1",
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0"
+  },
+  "engines": {
+    "node": "6.3"
   }
 }
