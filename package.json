@@ -15,6 +15,7 @@
   "author": "Lee Blazek <info@berzerk.co.nz> (http://berzerk.co.nz/)",
   "license": "ISC",
   "dependencies": {
-    "@slack/client": "^3.5.1"
+    "@slack/client": "^3.5.1",
+    "express": "^4.14.0"
   }
 }

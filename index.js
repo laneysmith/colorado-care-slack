@@ -3,6 +3,16 @@ var RtmClient = require('@slack/client').RtmClient;
 var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
 var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
 var RTM_CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS.RTM;
+
+
+var express = require('express');
+var app = express();
+let port = process.env.PORT || 3000;
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+
 // The memory data store is a collection of useful functions we can include in our RtmClient
 var MemoryDataStore = require('@slack/client').MemoryDataStore;
 // var rtm = new RtmClient(token, {logLevel: 'debug'});
@@ -43,4 +53,8 @@ rtm.on(RTM_EVENTS.CHANNEL_CREATED, function (message) {
   // Listens to all `channel_created` events from the team
 });
 rtm.start();
-console.log('started test init');
+console.log('started test rtm');
+
+app.listen(port, function () {
+  console.log('app listening on port ' + port + '!');
+});
