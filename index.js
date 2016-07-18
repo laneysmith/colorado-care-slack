@@ -24,7 +24,7 @@ rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
 });
 rtm.on(RTM_EVENTS.MESSAGE, function (message) {
   // Listens to all `message` events from the team
-//   { type: 'message',
+  // { type: 'message',
   //   channel: 'C1R69C2G0',
   //   user: 'U1R69C14G',
   //   text: 'dsf',
