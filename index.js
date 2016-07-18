@@ -11,6 +11,10 @@ let port = process.env.PORT || 3000;
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
+app.post('/commands/motivate', function (req, res) {
+  console.log(req);
+  res.send('Lets do this!' + req.user_name );
+});
 
 
 // The memory data store is a collection of useful functions we can include in our RtmClient
