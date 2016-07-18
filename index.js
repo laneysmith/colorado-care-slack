@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 });
 app.post('/commands/motivate', function (req, res) {
   console.log(req);
-  res.send('Lets do this!' + req.user_name );
+  res.send('Lets do this!' + req.body.user_name );
 });
 
 
