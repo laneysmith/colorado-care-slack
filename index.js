@@ -23,6 +23,7 @@ app.get('/', function (req, res) {
 });
 //Call a / command that queries the calander to retrieve events.
 console.log(new Date());
+let todaysEvents = [];
 function sortEvents(startDate) {
   console.log(startDate);
   publicGoogleCalendar.getEvents(function(err, events) {
@@ -30,7 +31,7 @@ function sortEvents(startDate) {
     // events is now array of all calendar events
     //start
     console.log('init length ' + events.length);
-    let filtered = events.filter(function (event) {
+    todaysEvents = events.filter(function (event) {
       let today = startDate.getDate();
       let thisMonth = startDate.getMonth();
       let day = event.start.getDate();
@@ -42,7 +43,7 @@ function sortEvents(startDate) {
       }
 
     })
-    console.log(`there are ${filtered.length}
+    console.log(`there are ${todaysEvents.length}
 
       events`);
 
@@ -60,7 +61,7 @@ app.post('/commands/motivate', urlencodedParser, function (req, res) {
 
       // sortEvents(new Date();)
 
-      res.send(`today there are ${events.length} events.
+      res.send(`today there are ${todaysEvents.length} events.
 
         asds`);
 
