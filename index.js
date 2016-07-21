@@ -1,4 +1,7 @@
 const config = require('./config');
+const PublicGoogleCalendar = require('public-google-calendar')
+  , publicGoogleCalendar = new PublicGoogleCalendar({ calendarId: '00odpg87lg2o43eki6gi0sktgk@group.calendar.google.com' });
+
 
 let bot = require('./bot');
 const express = require('express');
@@ -11,10 +14,13 @@ let port = process.env.PORT || 3000;
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  publicGoogleCalendar.getEvents(function(err, events) {
+    if (err) { return console.log(err.message); }
+    // events is now array of all calendar events
+    res.send(events[0]);
+  });
 });
-
-
+//Call a / command that queries the calander to retrieve events.
 
 app.post('/commands/motivate', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
