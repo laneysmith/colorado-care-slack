@@ -26,7 +26,7 @@ app.get('/', function (req, res) {
 app.post('/commands/motivate', urlencodedParser, function (req, res) {
   if (!req.body) return res.sendStatus(400)
   // res.send('Lets do this! hello, hello, test 1 2' + req.body.text);
-  switch (req.body) {
+  switch (req.body.text) {
     case 'today':
 
       res.send('today')
