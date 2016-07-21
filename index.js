@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
   publicGoogleCalendar.getEvents(function(err, events) {
     if (err) { return console.log(err.message); }
     // events is now array of all calendar events
-    res.send(events);
+    res.send(events[0]);
   });
 });
 //Call a / command that queries the calander to retrieve events.
