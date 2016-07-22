@@ -43,11 +43,9 @@ function sortEvents(startDate) {
       }
 
     })
-    console.log(`there are ${todaysEvents.length}
-
-      events`);
-
-    // res.send(events[0]);
+    todaysEvents.map(ea => {
+      console.log(`there are ${ea.summary} blah`);
+    })
   });
 }
 console.log(sortEvents(new Date()));
