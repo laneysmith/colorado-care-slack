@@ -1,0 +1,72 @@
+{
+    "status": "CONFIRMED",
+    "summary": "Community Call-In on ColoradoCare",
+    "description": "Join us every Wednesday at 7:00pm for an introduction to ColoradoCare, information on upcoming events, and an open Q&A session.\n\nCall 302-202-1110 and key in 941687 when prompted for the access code.\n\n",
+    "location": "Call 302-202-1110 and key in 941687 when prompted.",
+    "id": "ssqe98k334eoif6a3is4o96jg8@google.com",
+    "start": "2016-11-03T01:00:00.000Z",
+    "end": "2016-11-03T01:45:00.000Z",
+    "baseEvent": {
+        "start": "2016-03-10T02:00:00.000Z",
+        "end": "2016-03-10T02:45:00.000Z",
+        "status": "CONFIRMED",
+        "summary": "Community Call-In on ColoradoCare",
+        "description": "Join us every Wednesday at 7:00pm for an introduction to ColoradoCare, information on upcoming events, and an open Q&A session.\n\nCall 302-202-1110 and key in 941687 when prompted for the access code.\n\n",
+        "rrule": {
+            "_string": null,
+            "_cache": {
+                "all": false,
+                "before": [],
+                "after": [],
+                "between": []
+            },
+            "origOptions": {
+                "freq": 2,
+                "until": "2016-11-03T01:00:00.000Z",
+                "byweekday": [2],
+                "dtstart": "2016-03-10T02:00:00.000Z",
+                "interval": 1,
+                "wkst": 0,
+                "count": null,
+                "bysetpos": null,
+                "bymonth": null,
+                "bymonthday": [],
+                "byyearday": null,
+                "byweekno": null,
+                "byhour": [19],
+                "byminute": [0],
+                "bysecond": [0],
+                "byeaster": null,
+                "bynmonthday": [],
+                "bynweekday": null
+            },
+            "options": {
+                "freq": 2,
+                "dtstart": "2016-07-21T20:30:16.000Z",
+                "interval": 1,
+                "wkst": 0,
+                "count": null,
+                "until": "2016-11-03T01:00:00.000Z",
+                "bysetpos": null,
+                "bymonth": null,
+                "bymonthday": [],
+                "byyearday": null,
+                "byweekno": null,
+                "byweekday": [2],
+                "byhour": [14],
+                "byminute": [30],
+                "bysecond": [16],
+                "byeaster": null,
+                "bynmonthday": [],
+                "bynweekday": null
+            },
+            "timeset": [{
+                "hour": 14,
+                "minute": 30,
+                "second": 16
+            }]
+        },
+        "location": "Call 302-202-1110 and key in 941687 when prompted.",
+        "id": "ssqe98k334eoif6a3is4o96jg8@google.com"
+    }
+}
